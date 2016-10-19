@@ -40,6 +40,7 @@ gem 'omniauth-vkontakte'
 gem 'bootstrap-material-design'
 gem 'redis', '~> 3.2'
 gem 'rails_12factor'
+gem 'sendgrid-ruby'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
