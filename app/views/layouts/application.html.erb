@@ -3,15 +3,50 @@
   <head>
     <title>Applikeysolutions</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <%= link_to 'Log out', destroy_user_session_path(current_user), method: :delete %>
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <%= link_to 'AppliKeySolutions', root_path, class: 'navbar-brand' %>
+        </div>
+        <div id="navbar">
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'Home', root_path %></li>
+          </ul>
+          <ul class="nav navbar-nav pull-right">
+            <% if user_signed_in? %>
+              <li class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <%= current_user.name %>
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><%= link_to 'Menu', root_path %></li>                  
+                  <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </li>
+            <% else %>
+              <li><%= link_to 'Log In', new_user_session_path %></li>
+              <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <% if notice.present? %>
+      <aside class="alert alert-info">
+       <%= notice %>
+      </aside>
     <% end %>
-    <%= yield %>
+    <% if alert.present? %>
+      <aside class="alert alert-danger">
+        <%= alert %>
+      </aside>
+    <% end %>   
+  <%= yield %>
   </body>
 </html>

@@ -1,0 +1,7 @@
+h1 Add chat room
+
+= form_for @chat_room do |f|
+  .form-group
+    = f.label :title, class:'label-hidden'
+    = f.text_field :title, placeholder:'Input title', autofocus: true, class: 'form-control'
+    = f.submit "Add", class: 'btn btn-primary'
