@@ -1,0 +1,30 @@
+.card.custom-signup-card
+  .card-block
+    .text-center
+      h4
+        i.fa.fa-lock Log in:
+      hr.m-t-2.m-b-2    
+    .container-fluid
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        = devise_error_messages!
+        .row
+          .md-form.cusotm-md.col-sm-8.col-sm-offset-2.field        
+            = f.label :email, class:'label-hidden'
+            = f.email_field :email, placeholder: 'Input email', autofocus: true, class:'form-controll'        
+        .row
+          .md-form.custom-md.col-sm-8.col-sm-offset-2.field
+            i.fa.fa-lock.prefix
+            = f.label :password, class:'label-hidden'            
+            = f.password_field :password, placeholder: "Input password #{@minimum_password_length}  minimun characters", autocomplete: "off", class:'form-controll'
+        .row
+          .md-form.custom-md.col-sm-8.col-sm-offset-2.field
+            .field
+              = f.check_box :remember_me
+              = f.label :remember_me                   
+        .text-center.actions
+          = f.submit "Log in", class:"btn btn-deep-purple"          
+          = link_to image_tag("google.png", class: 'g_icon'), omniauth_authorize_path(resource_name, 'facebook')
+        .row
+          .md-form.custom-md.col-sm-8.col-sm-offset-3.field
+            = render "devise/shared/links"
+
