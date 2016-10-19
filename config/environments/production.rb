@@ -46,6 +46,9 @@ Rails.application.configure do
   # when problems arise.
   config.log_level = :debug
 
+  config.web_socket_server_url = "wss://applikeysolutions.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://applikeysolutions.herokuapp.com', 'http://applikeysolutions.herokuapp.com']
+
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
 
