@@ -39,6 +39,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
 gem 'bootstrap-material-design'
 gem 'redis', '~> 3.2'
+gem 'rails_12factor'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
