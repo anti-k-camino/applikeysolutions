@@ -1,7 +1,7 @@
 class User < ApplicationRecord  
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
+         :omniauthable, omniauth_providers: [:facebook, :vkontakte]
 
   include Authorizations 
 

@@ -34,7 +34,7 @@ gem 'foreman'
 gem 'responders'
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2', '~> 0.2.1'
+gem 'omniauth-vkontakte'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
