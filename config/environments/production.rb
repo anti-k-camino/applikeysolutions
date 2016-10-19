@@ -88,6 +88,7 @@ Rails.application.configure do
     :authentication => 'login',
     :domain => 'applikeysolutions.herokuapp.com', # your domain to identify your server when connecting
   }
+  
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
