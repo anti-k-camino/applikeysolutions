@@ -1,12 +1,15 @@
-class User < ApplicationRecord  
+class User < ApplicationRecord 
+
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, omniauth_providers: [:facebook, :vkontakte]  
+         :omniauthable, omniauth_providers: [:facebook, :vkontakte] 
 
   has_many :chat_rooms, dependent: :destroy
   has_many :messages, dependent: :destroy  
 
-  include Authorizations   
+  include Authorizations 
+
+  mount_uploader :image, ImageUploader  
 
   validates :name, :email, :password, presence: true
   validates :name, uniqueness: { case_sensitive: false } 

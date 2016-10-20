@@ -37,7 +37,7 @@ module Authorizations
       elsif email
         name = auth.info[:name]
         password = Devise.friendly_token[0, 20]
-        user = User.create!(name: name, email: email, password: password, password_confirmation: password, confirmed_at: Time.now)
+        user = User.create(name: name, email: email, password: password, password_confirmation: password, confirmed_at: Time.now)
         user.authorizations.create(provider: auth.provider, uid: auth.uid)
         AuthMailer.password_email(user, password).deliver_now
       end

@@ -81,12 +81,12 @@ Rails.application.configure do
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
     :address   => "smtp.sendgrid.net",
-    :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
-    :enable_starttls_auto => true, # detects and uses STARTTLS
+    :port      => 587, 
+    :enable_starttls_auto => true, 
     :user_name => ENV["SENDGRID_USERNAME"],
-    :password  => ENV["SENDGRID_PASSWORD"], # SMTP password is any valid API key, when user_name is "apikey".
+    :password  => ENV["SENDGRID_PASSWORD"], 
     :authentication => 'login',
-    :domain => 'applikeysolutions.herokuapp.com', # your domain to identify your server when connecting
+    :domain => 'applikeysolutions.herokuapp.com', 
   }
   
 
@@ -98,8 +98,6 @@ Rails.application.configure do
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
-  end
-
-  # Do not dump schema after migrations.
+  end  
   config.active_record.dump_schema_after_migration = false
 end

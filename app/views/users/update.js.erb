@@ -1,0 +1,8 @@
+<% if @user.errors.any? %>
+  $('.errors').html("<%= j render 'common/errors', resource: @user %>");
+  $('.notices').html("");
+<% else %>
+  $('.errors').html("");  
+  $('.avatar').html("<%= j render 'users/avatar' %>");  
+  $('.notices').html("<%= j render 'common/notices' %> ");
+<% end %>

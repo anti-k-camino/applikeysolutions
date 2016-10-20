@@ -14,6 +14,7 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require jquery.remotipart
 //= require cable
 //= require bootstrap/dropdown
 //= require turbolinks

@@ -1,0 +1,16 @@
+.panel.panel-default
+  h3.text-center #{@user.name} profile
+  .card
+    =form_for @user, method: :patch, html: {multipart: true}, remote: true do |f|
+      .errors
+      .form-group
+        =f.label :name, class:'label_hidden'
+        =f.text_field :name, class:'form-control'
+      .form-group
+        =f.label :image, class:'label_hidden'
+        =f.file_field :image      
+      .form-group
+        =f.submit "Update" 
+  h3 Image
+  .avatar
+    =image_tag @user.image.avatar if @user.image.present?

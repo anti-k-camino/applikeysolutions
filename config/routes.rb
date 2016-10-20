@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :policies, only:[] do
     get :privacy, on: :collection
   end
+
+  resources :users, only:[:show, :update]
   resources :authorizations, only:[:new, :create]
 
   resources :chat_rooms, only: [:new, :create, :show, :index]
