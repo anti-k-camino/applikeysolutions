@@ -21,7 +21,7 @@ module Authorizations
     def create_self_and_authorization!(auth, email)
       pass = Devise.friendly_token[0, 20]
       transaction do             
-        @user = User.create!(name: auth['info']['name'], email: email, password: pass, password_confirmation: pass)     
+        @user = User.create!(name: auth['info']['name'],  email: email, password: pass, password_confirmation: pass)     
         @user.authorizations.create!(provider: auth['provider'], uid: auth['uid'])
       end
     end

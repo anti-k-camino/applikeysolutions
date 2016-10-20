@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   mount_uploader :image, ImageUploader  
 
-  validates :name, :email, :password, presence: true
+  validates :name, :email, :password, presence: true, on: :create
   validates :name, uniqueness: { case_sensitive: false } 
 
   def name

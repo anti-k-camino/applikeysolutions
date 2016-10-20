@@ -5,8 +5,9 @@
         h5 OPA
       </div>
       <div class="col-md-11">
+        <p></p>
         <p class="card-text">
-          <span class="text-muted"><%= message.user.name %> at <%= message.timestamp %> says</span><br>
+          <span class="text-muted"><%= image_tag "#{message.user.image.avatar}" %><%= message.user.name %> at <%= message.timestamp %> says</span><br>
           <%= message.body %>
         </p>
       </div>
