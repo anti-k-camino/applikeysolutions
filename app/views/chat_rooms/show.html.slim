@@ -1,14 +1,14 @@
-.container.chat-form
+.content.container.chat-form
   h4.text-center =@chat_room.title
   div id='messages' data-chat-room-id="#{@chat_room.id}"
     =render @chat_room.messages
   hr
+.footer.container
   =form_for @message, url: '#' do |f|
     = hidden_field_tag 'chat_room_id', @chat_room.id
     .form-group
       = f.label :body, class:'label_hidden'
-      = f.text_area :body, class: 'form-control'
-      small.text-muted From 2 to 1000 characters
-    </div>
+      = f.text_field :body, class: 'form-controll'
+      small.text-muted From 2 to 1000 characters    
     .form-group
       = f.submit "Post", class: 'btn btn-primary btn-lg'
