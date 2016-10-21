@@ -13,10 +13,16 @@ class ImageUploader < CarrierWave::Uploader::Base
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
-
+=begin
   def default_url(*args)
-    "/images/chuck.jpg"
+    ActionController::Base.helpers.asset_path("fallback/" + [avatar, "chuck.jpg"].compact.join('_'))
   end
+=end
+   def default_url      
+     "norris.jpg"
+   end
+ 
+
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
@@ -35,7 +41,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :avatar do
-    process resize_to_fit: [50, 50]
+    process resize_to_fit: [100, 80]
   end
 
   version :picture do

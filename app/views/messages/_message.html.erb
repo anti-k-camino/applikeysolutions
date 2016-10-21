@@ -1,16 +1,17 @@
-<div class="card">
-  <div class="card-block">
+
+  <div class="container message">
     <div class="row">
-      <div class="col-md-1">
-        h5 OPA
+      <div class="col-sm-2 ava">
+        <%= image_tag "#{message.user.image.avatar}", class:'ava' %>
       </div>
-      <div class="col-md-11">
-        <p></p>
-        <p class="card-text">
-          <span class="text-muted"><%= image_tag "#{message.user.image.avatar}" %><%= message.user.name %> at <%= message.timestamp %> says</span><br>
-          <%= message.body %>
+      <div class="col-sm-7 details">        
+        <p>
+          <span class="text-muted text-center mes-body"><%= message.body %></span><br>          
+          <span class="name"><%= message.user.name %></span>          
         </p>
+      </div>
+      <div class="col-sm-3"> 
+        <p class="date"> <%= message.timestamp %></p>
       </div>
     </div>
   </div>
-</div>

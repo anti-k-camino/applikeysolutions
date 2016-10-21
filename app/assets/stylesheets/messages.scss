@@ -1,4 +1,37 @@
 #messages {
-  max-height: 450px;
-  overflow-y: auto; 
+  max-height: 350px;
+  overflow-y: auto;
+  overflow-x: hidden;  
+  background: #ffffff;
 }
+.message{
+  margin-left: 20px;
+  margin-right: 160px;
+  margin-bottom: 10px;  
+  border-style: solid;
+  border-color: #c7b8ce;
+  border-width: 2px;    
+  border-radius: 10px;
+  padding: 5px;
+  padding-left: 7px;
+}
+.ava{
+  border-radius: 3px;
+}
+.name{  
+  color: #c7b8ce;    
+}
+.date{
+  color: white;
+  text-shadow: 1px 1px 2px #000000;
+}
+.label_hidden{
+  display: none;
+}
+.mes-body{
+  font-weight: 900;  
+}
+.details{
+  margin-top: 5px;
+}
+
