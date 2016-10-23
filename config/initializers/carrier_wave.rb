@@ -11,8 +11,3 @@ if Rails.env.production?
   end
 end
 
-if Rails.env.development? || Rails.env.test?
-  CarrierWave.configure do |config|
-    config.storage = :file
-  end
-end
