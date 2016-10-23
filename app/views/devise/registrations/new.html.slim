@@ -1,4 +1,4 @@
-.card.custom-signup-card
+.card
   .card-block
     .text-center
       h4
@@ -24,10 +24,11 @@
             i.fa.fa-lock.prefix
             = f.label :password_confirmation, class:'label-hidden'
             = f.password_field :password_confirmation, placeholder: 'Confirm password', autocomplete: "off"
-        .form-group.text-center.actions
-          = f.submit "Sign up", class:"btn btn-deep-purple"          
-          = link_to image_tag("fb.png", class: 'g_icon'), omniauth_authorize_path(resource_name, 'facebook')
-          = link_to image_tag("vk.png", class: 'g_icon'), omniauth_authorize_path(resource_name, 'vkontakte')
         .form-group
-          .md-form.cusotm-md.col-sm-8.col-sm-offset-3.field
+          .md-form.cusotm-md.col-sm-8.col-sm-offset-2
+            = f.submit "Sign up", class:"btn btn-deep-purple"          
+            = link_to image_tag("fb.png", class: 'g_icon'), omniauth_authorize_path(resource_name, 'facebook')
+            = link_to image_tag("vk.png", class: 'g_icon'), omniauth_authorize_path(resource_name, 'vkontakte')
+        .form-group
+          .md-form.cusotm-md.col-sm-8.col-sm-offset-3
             = render "devise/shared/links"

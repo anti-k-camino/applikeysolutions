@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :name, :email, :password, presence: true, on: :create
   validates :name, uniqueness: { case_sensitive: false } 
 
-  def name
+  def nick
     email.split('@')[0]
   end 
 
